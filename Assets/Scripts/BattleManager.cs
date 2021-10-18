@@ -15,9 +15,15 @@ public class BattleManager : MonoBehaviour
         eventSystem = this.GetComponent<EventSystem>();
     }
 
+    public void ReturnToSelection()
+    {
+        eventSystem.SetSelectedGameObject(GameObject.Find("HackButton"));
+    }
+
     public void SetAction(string action)
     {
         selectedAction = action;
         eventSystem.SetSelectedGameObject(GameObject.FindGameObjectWithTag("Enemy"));
     }
+
 }
