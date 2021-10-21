@@ -32,5 +32,8 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.tag == "Walls"){
             Debug.Log("Wall hit");
         }
+        if(collision.gameObject.tag == "Finish"){
+            Debug.Log("Finish hit");
+        }
     }
 }
