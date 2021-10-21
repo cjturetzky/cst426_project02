@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(collision.gameObject.tag == "Finish"){
             Debug.Log("Finish hit");
+            BattleManager.Instance.EndPuzzle();
         }
     }
 }

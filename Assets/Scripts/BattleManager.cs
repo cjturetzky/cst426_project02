@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class BattleManager : MonoBehaviour
 {
+
+    public GameObject puzzleView;
     private EventSystem eventSystem;
     public string selectedAction;
 
@@ -26,4 +28,17 @@ public class BattleManager : MonoBehaviour
         eventSystem.SetSelectedGameObject(GameObject.FindGameObjectWithTag("Enemy"));
     }
 
+    public void ActivatePuzzle()
+    {
+        puzzleView.SetActive(true);
+        eventSystem.sendNavigationEvents = false;
+    }
+
+    public void EndPuzzle()
+    {
+        puzzleView.SetActive(false);
+        eventSystem.currentSelectedGameObject.GetComponent<Enemy>().TakeDamage(10);
+        eventSystem.sendNavigationEvents = true;
+        ReturnToSelection();
+    }
 }

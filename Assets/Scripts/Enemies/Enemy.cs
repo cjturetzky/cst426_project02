@@ -23,8 +23,9 @@ public class Enemy : MonoBehaviour, ISelectHandler, IDeselectHandler, ISubmitHan
     {
         // to be replaced with: BattleManage.Instance.selectedAction.execute();
         Debug.Log("Used " + BattleManager.Instance.selectedAction + " on " + this.gameObject.name);
-        TakeDamage(10);
-        BattleManager.Instance.ReturnToSelection();
+        BattleManager.Instance.ActivatePuzzle();
+        // TakeDamage(10);
+        // BattleManager.Instance.ReturnToSelection();
     }
 
     public void OnCancel(BaseEventData eventData)
