@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public int speed = 5;
+    public float speed = 5.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +25,12 @@ public class PlayerMovement : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.DownArrow)){
             transform.Translate(0, -speed * Time.deltaTime, 0);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.tag == "Walls"){
+            Debug.Log("Wall hit");
         }
     }
 }
