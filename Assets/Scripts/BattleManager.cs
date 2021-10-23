@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,9 @@ using UnityEngine.EventSystems;
 
 public class BattleManager : MonoBehaviour
 {
+
+    public Round round;
+    public GameObject[] slots;
 
     public GameObject puzzleView;
     private EventSystem eventSystem;
@@ -15,6 +19,15 @@ public class BattleManager : MonoBehaviour
     {
         Instance = this;
         eventSystem = this.GetComponent<EventSystem>();
+        InstantiateEnemies();
+    }
+
+    void InstantiateEnemies()
+    {
+        for (int i = 0; i < round.enemies.Length; i++)
+        {
+            round.enemies[i] = GameObject.Instantiate(round.enemies[i], slots[i].transform);
+        }
     }
 
     public void ReturnToSelection()
@@ -41,5 +54,11 @@ public class BattleManager : MonoBehaviour
         eventSystem.currentSelectedGameObject.GetComponent<Enemy>().TakeDamage(10);
         eventSystem.sendNavigationEvents = true;
         ReturnToSelection();
+    }
+
+    [Serializable]
+    public struct Round
+    {
+        public GameObject[] enemies;
     }
 }
