@@ -31,6 +31,7 @@ public class BattleManager : MonoBehaviour
     public void ActivatePuzzle()
     {
         puzzleView.SetActive(true);
+        PuzzleManager.Instance.Restart();
         eventSystem.sendNavigationEvents = false;
     }
 
