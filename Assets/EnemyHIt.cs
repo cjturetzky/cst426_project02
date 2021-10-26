@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyHIt : MonoBehaviour
 {
     
-    private void OnTriggerEvent2D(Collider2D other){
-        Debug.Log("hit detected");
+    private void OnTriggerEnter2D(Collider2D other){
+       SceneManager.LoadScene("BattleScene");
     }
 
 }
