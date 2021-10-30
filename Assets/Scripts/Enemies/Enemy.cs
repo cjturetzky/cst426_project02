@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour, ISelectHandler, IDeselectHandler, ISubmitHan
     void Die()
     {
         // Reward player with scrap
+        BattleManager.Instance.RemoveEnemy(this.gameObject);
         Destroy(this.gameObject);
     }
 }
