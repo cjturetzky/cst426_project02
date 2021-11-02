@@ -21,10 +21,10 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(speed * Time.deltaTime, 0, 0);
         }
         if(Input.GetKey(KeyCode.UpArrow)){
-            transform.Translate(0, speed * Time.deltaTime, 0);
+            transform.Translate(0, 0, speed * Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.DownArrow)){
-            transform.Translate(0, -speed * Time.deltaTime, 0);
+            transform.Translate(0, 0, -speed * Time.deltaTime);
         }
     }
 
