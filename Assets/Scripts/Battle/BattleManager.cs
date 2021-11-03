@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class BattleManager : MonoBehaviour
@@ -11,8 +12,9 @@ public class BattleManager : MonoBehaviour
     public GameObject[] slots;
 
     public GameObject player;
-
     public GameObject puzzleView;
+
+    public Text infoText;
     private EventSystem eventSystem;
     public string selectedAction;
 
@@ -45,11 +47,13 @@ public class BattleManager : MonoBehaviour
     public void SetAction(string action)
     {
         selectedAction = action;
+        infoText.text = "Select a target!";
         eventSystem.SetSelectedGameObject(GameObject.FindGameObjectWithTag("Enemy"));
     }
 
     public void ActivatePuzzle()
     {
+        infoText.text = "Navigate through the maze to hack the robot's CORE!";
         puzzleView.SetActive(true);
         PuzzleManager.Instance.Restart();
         eventSystem.sendNavigationEvents = false;
