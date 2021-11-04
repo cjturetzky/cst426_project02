@@ -245,7 +245,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -393.87268, y: -151.5}
-  m_SizeDelta: {x: 211.7354, y: 151.01}
+  m_SizeDelta: {x: 200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &252325841
 MonoBehaviour:
@@ -694,7 +694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 91.846, y: -175}
+  m_AnchoredPosition: {x: 91.846, y: -184.47}
   m_SizeDelta: {x: 759.7021, y: 85.0605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &806992510
@@ -1035,7 +1035,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You are confronted by Robots A, B, and C!
+  m_Text: You are confronted by Robots A, B, and C! Use your <color=orange>HACK</color>
+    To destroy them!
 --- !u!222 &960191879
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1134,7 +1135,7 @@ MonoBehaviour:
   - {fileID: 1029899143}
   player: {fileID: 170995268}
   puzzleView: {fileID: 1407091491}
-  infoText: {fileID: 0}
+  infoText: {fileID: 960191878}
   selectedAction: 
 --- !u!1 &1029899143
 GameObject:
@@ -1561,7 +1562,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705528473}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.62, y: -1.9, z: -1.8035163}
+  m_LocalPosition: {x: 13.75, y: -1.9, z: -1.8035163}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1752848174}

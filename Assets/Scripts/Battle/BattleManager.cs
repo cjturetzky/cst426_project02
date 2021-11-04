@@ -18,6 +18,8 @@ public class BattleManager : MonoBehaviour
     private EventSystem eventSystem;
     public string selectedAction;
 
+    int reward = 0;
+
     public static BattleManager Instance {private set ; get;}
     void Start()
     {
@@ -36,7 +38,12 @@ public class BattleManager : MonoBehaviour
 
     public void RemoveEnemy(GameObject enemy)
     {
+        reward += enemy.GetComponent<Enemy>().scrap;
         round.enemies.Remove(enemy);
+        if (round.enemies.Count == 0)
+        {
+            EndBattle();
+        }
     }
 
     public void ReturnToSelection()
@@ -68,18 +75,36 @@ public class BattleManager : MonoBehaviour
 
     void BeginEnemyTurn()
     {
+        if (round.enemies.Count == 0)
+        {
+            return;
+        }
+        
+        eventSystem.sendNavigationEvents = false;
+        int damage = 0;
+
         for (int i = 0; i < round.enemies.Count; i++)
         {
-            player.GetComponent<PlayerBattle>().TakeDamage(round.enemies[i].GetComponent<Enemy>().atk);
+            Enemy enemy = round.enemies[i].GetComponent<Enemy>();
+            damage += enemy.atk;
         }
+        // StartCoroutine(PrintDialogue("The enemies attacked for " + damage + " damage!", 0.025f));
+        infoText.text = "The enemies attacked for " + damage + " damage!";
+        player.GetComponent<PlayerBattle>().TakeDamage(damage);
         BeginPlayerTurn();
     }
+
 
     public void BeginPlayerTurn()
     {
         eventSystem.sendNavigationEvents = true;
         ReturnToSelection();
+    }
 
+    void EndBattle()
+    {
+        eventSystem.sendNavigationEvents = false;
+        infoText.text = "You won! Received " + reward + " scrap!";
     }
 
     [Serializable]
@@ -87,4 +112,15 @@ public class BattleManager : MonoBehaviour
     {
         public List<GameObject> enemies;
     }
+
+
+    // IEnumerator PrintDialogue(string text, float speed)
+    // {
+    //     infoText.text = "";
+    //     foreach (char c in text.ToCharArray())
+    //     {
+    //         infoText.text += c;
+    //         yield return new WaitForSeconds(0);
+    //     }
+    // }
 }
