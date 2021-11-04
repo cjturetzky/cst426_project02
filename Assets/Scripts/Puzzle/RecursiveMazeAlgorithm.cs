@@ -8,6 +8,7 @@ public class RecursiveMazeAlgorithm : BasicMazeGenerator
     public override void GenerateMaze()
     {
         VisitCell(0, 0, Direction.Start);
+        GetMazeCell(0, 0).IsGoal = true;
     }
     private void VisitCell (int row, int column, Direction moveMade)
     {
