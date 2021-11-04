@@ -20,6 +20,7 @@ public class BattleManager : MonoBehaviour
     public GameObject highlightedButton;
 
     int reward = 0;
+    float defaultSpeed = 0.025f;
 
     public static BattleManager Instance {private set ; get;}
     void Start()
@@ -65,13 +66,15 @@ public class BattleManager : MonoBehaviour
     public void SetAction(string action)
     {
         selectedAction = action;
-        infoText.text = "Select a target!";
+        //infoText.text = "Select a target!";
+        StartDialogue("Select a target!", defaultSpeed);
         eventSystem.SetSelectedGameObject(GameObject.FindGameObjectWithTag("Enemy"));
     }
 
     public void ActivatePuzzle()
     {
-        infoText.text = "Navigate through the maze to hack the robot's CORE!";
+        //infoText.text = "Navigate through the maze to hack the robot's CORE!";
+        StartDialogue("Navigate through the maze to hack the robot's CORE!", defaultSpeed / 2);
         puzzleView.SetActive(true);
         PuzzleManager.Instance.Restart();
         eventSystem.sendNavigationEvents = false;
@@ -99,8 +102,8 @@ public class BattleManager : MonoBehaviour
             Enemy enemy = round.enemies[i].GetComponent<Enemy>();
             damage += enemy.atk;
         }
-        // StartCoroutine(PrintDialogue("The enemies attacked for " + damage + " damage!", 0.025f));
-        infoText.text = "The enemies attacked for " + damage + " damage!";
+        StartDialogue("The enemies attacked for " + damage + " damage!", defaultSpeed);
+        //infoText.text = "The enemies attacked for " + damage + " damage!";
         player.GetComponent<PlayerBattle>().TakeDamage(damage);
         BeginPlayerTurn();
     }
@@ -115,7 +118,8 @@ public class BattleManager : MonoBehaviour
     void EndBattle()
     {
         eventSystem.sendNavigationEvents = false;
-        infoText.text = "You won! Received " + reward + " scrap!";
+        //infoText.text = "You won! Received " + reward + " scrap!";
+        StartDialogue("You won! Received " + reward + " scrap!", defaultSpeed);
     }
 
     [Serializable]
@@ -124,14 +128,19 @@ public class BattleManager : MonoBehaviour
         public List<GameObject> enemies;
     }
 
+    void StartDialogue(string text, float speed)
+    {
+        StopAllCoroutines();
+        StartCoroutine(PrintDialogue(text, speed));
+    }
 
-    // IEnumerator PrintDialogue(string text, float speed)
-    // {
-    //     infoText.text = "";
-    //     foreach (char c in text.ToCharArray())
-    //     {
-    //         infoText.text += c;
-    //         yield return new WaitForSeconds(0);
-    //     }
-    // }
+    IEnumerator PrintDialogue(string text, float speed)
+    {
+        infoText.text = "";
+        foreach (char c in text.ToCharArray())
+        {
+            infoText.text += c;
+            yield return new WaitForSeconds(speed);
+        }
+    }
 }
