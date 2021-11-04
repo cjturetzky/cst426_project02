@@ -17,6 +17,7 @@ public class BattleManager : MonoBehaviour
     public Text infoText;
     private EventSystem eventSystem;
     public string selectedAction;
+    public GameObject highlightedButton;
 
     int reward = 0;
 
@@ -26,6 +27,16 @@ public class BattleManager : MonoBehaviour
         Instance = this;
         eventSystem = this.GetComponent<EventSystem>();
         InstantiateEnemies();
+    }
+
+    void Update()
+    {
+        if (eventSystem.currentSelectedGameObject == null)
+        {
+            eventSystem.SetSelectedGameObject(highlightedButton);
+        }
+
+        highlightedButton = eventSystem.currentSelectedGameObject;
     }
 
     void InstantiateEnemies()
