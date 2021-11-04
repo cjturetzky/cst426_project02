@@ -19,6 +19,7 @@ public class MazeSpawner : MonoBehaviour
   public bool AddGaps = false;
   public GameObject GoalPrefab = null;
   private BasicMazeGenerator mMazeGenerator = null;
+  public GameObject PlayerPrefab = null;
   // Start is called before the first frame update
   void Start()
     {
@@ -81,5 +82,8 @@ public class MazeSpawner : MonoBehaviour
         }
       }
     }
+    
+    GameObject player = Instantiate(PlayerPrefab, new Vector3((Columns-1), (Rows-1), 0), PlayerPrefab.transform.rotation) as GameObject;
+    player.transform.parent = transform;
   }
 }
