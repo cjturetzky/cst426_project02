@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4901929325315250008}
   - component: {fileID: 1779069448695699660}
+  - component: {fileID: 5704433348089358920}
   m_Layer: 0
   m_Name: MazeView
   m_TagString: Untagged
@@ -58,6 +59,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &5704433348089358920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983683987342238935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88628bcf38215cc048604f4d63a08269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mazeSpawner: {fileID: 2550333740935398626}
 --- !u!1001 &913133590010094574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,3 +134,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3443143957983438605, guid: 3c4c262a2f2b1f0199985fdb00e9cc4f, type: 3}
   m_PrefabInstance: {fileID: 913133590010094574}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2550333740935398626 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3443143957983438604, guid: 3c4c262a2f2b1f0199985fdb00e9cc4f, type: 3}
+  m_PrefabInstance: {fileID: 913133590010094574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dbbd58fb11cc41a889bdaa0711e9b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

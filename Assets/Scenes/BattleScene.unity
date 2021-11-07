@@ -1134,7 +1134,7 @@ MonoBehaviour:
   - {fileID: 846646662}
   - {fileID: 1029899143}
   player: {fileID: 170995268}
-  puzzleView: {fileID: 0}
+  puzzleView: {fileID: 1099321999}
   infoText: {fileID: 960191878}
   selectedAction: 
   highlightedButton: {fileID: 0}
@@ -1168,6 +1168,11 @@ Transform:
   m_Father: {fileID: 1705528474}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1099321999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 983683987342238935, guid: 1cdd4e6de1ba56b788d4529158d05311, type: 3}
+  m_PrefabInstance: {fileID: 1345684532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1151809998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,6 +1305,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MazeView
       objectReference: {fileID: 0}
+    - target: {fileID: 983683987342238935, guid: 1cdd4e6de1ba56b788d4529158d05311, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1779069448695699660, guid: 1cdd4e6de1ba56b788d4529158d05311, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1307,6 +1316,22 @@ PrefabInstance:
     - target: {fileID: 1779069448695699660, guid: 1cdd4e6de1ba56b788d4529158d05311, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550333740935398626, guid: 1cdd4e6de1ba56b788d4529158d05311, type: 3}
+      propertyPath: Rows
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550333740935398626, guid: 1cdd4e6de1ba56b788d4529158d05311, type: 3}
+      propertyPath: Columns
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550333740935398627, guid: 1cdd4e6de1ba56b788d4529158d05311, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550333740935398627, guid: 1cdd4e6de1ba56b788d4529158d05311, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2550333740935398627, guid: 1cdd4e6de1ba56b788d4529158d05311, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1390,7 +1415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4901929325315250008, guid: 1cdd4e6de1ba56b788d4529158d05311, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4901929325315250008, guid: 1cdd4e6de1ba56b788d4529158d05311, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

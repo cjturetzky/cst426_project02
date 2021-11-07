@@ -74,12 +74,12 @@ public class BattleManager : MonoBehaviour
     {
         StartDialogue("Navigate through the maze to hack the robot's CORE!", defaultSpeed / 2);
         puzzleView.SetActive(true);
-//        PuzzleManager.Instance.Restart();
         eventSystem.sendNavigationEvents = false;
     }
 
     public void EndPuzzle()
     {
+        PuzzleManager.Instance.Restart();
         puzzleView.SetActive(false);
         eventSystem.currentSelectedGameObject.GetComponent<Enemy>().TakeDamage(10);
         BeginEnemyTurn();

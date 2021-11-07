@@ -22,7 +22,22 @@ public class MazeSpawner : MonoBehaviour
   public GameObject PlayerPrefab = null;
   // Start is called before the first frame update
   void Start()
+  {
+    GenerateNewMaze();  
+  }
+
+  public void ClearMaze()
+  {
+    List<GameObject> children = new List<GameObject>();
+    foreach (Transform child in transform)
     {
+      children.Add(child.gameObject);
+    }
+    children.ForEach(child => Destroy(child));
+  }
+
+  public void GenerateNewMaze()
+  {
     if (!FullRandom)
     {
       Random.InitState(RandomSeed);
