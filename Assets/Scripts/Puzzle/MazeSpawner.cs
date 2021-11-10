@@ -101,6 +101,6 @@ public class MazeSpawner : MonoBehaviour
     
     GameObject player = Instantiate(PlayerPrefab, new Vector3((Columns-1), (Rows-1), 0), PlayerPrefab.transform.rotation) as GameObject;
     player.transform.parent = transform;
-    this.transform.position = new Vector3(-2.5f, -5, 0);
+    this.transform.Translate(new Vector3(-2.5f, -2.5f, 0));
   }
 }
