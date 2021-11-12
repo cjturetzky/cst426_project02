@@ -592,10 +592,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1006795817}
         m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
         m_MethodName: SetAction
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2733542480636420844, guid: c2c0f2b17d9e5ce6bb7b5d2972501ef1, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Hack
@@ -1136,7 +1136,7 @@ MonoBehaviour:
   player: {fileID: 170995268}
   puzzleView: {fileID: 1099321999}
   infoText: {fileID: 960191878}
-  selectedAction: 
+  selectedAction: {fileID: 0}
   highlightedButton: {fileID: 0}
 --- !u!1 &1029899143
 GameObject:
@@ -1255,7 +1255,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 462583178}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1006795817}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: SetAction
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2108807217930904871, guid: 7ac25b0d77385d82a9f607ca3f96003f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1151810001
 MonoBehaviour:
   m_ObjectHideFlags: 0

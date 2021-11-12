@@ -16,7 +16,7 @@ public class BattleManager : MonoBehaviour
 
     public Text infoText;
     private EventSystem eventSystem;
-    public string selectedAction;
+    public Action selectedAction;
     public GameObject highlightedButton;
 
     int reward = 0;
@@ -63,9 +63,22 @@ public class BattleManager : MonoBehaviour
         eventSystem.SetSelectedGameObject(GameObject.Find("HackButton"));
     }
 
-    public void SetAction(string action)
+    public void SetAction(GameObject action)
     {
-        selectedAction = action;
+        selectedAction = action.GetComponent<Action>();
+        if (selectedAction.isTargeted)
+        {
+            SetTarget();
+        }
+        else
+        {
+            selectedAction.Execute(player);
+            BeginEnemyTurn();
+        }
+    }
+
+    public void SetTarget()
+    {
         StartDialogue("Select a target!", defaultSpeed);
         eventSystem.SetSelectedGameObject(GameObject.FindGameObjectWithTag("Enemy"));
     }
