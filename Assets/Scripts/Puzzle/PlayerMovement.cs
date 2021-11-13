@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.tag == "Walls"){
-            Debug.Log("Wall hit");
+            // Debug.Log("Wall hit");
         }
         if(collision.gameObject.tag == "Finish"){
             Debug.Log("Finish hit");

@@ -14,10 +14,15 @@ public class BattleManager : MonoBehaviour
     public GameObject player;
     public GameObject puzzleView;
 
+    public GameObject actionMenu;
+    public GameObject spellMenu;
+
     public Text infoText;
     private EventSystem eventSystem;
     public Action selectedAction;
     public GameObject highlightedButton;
+
+    GameObject previousButton;
 
     int reward = 0;
     float defaultSpeed = 0.025f;
@@ -60,11 +65,12 @@ public class BattleManager : MonoBehaviour
 
     public void ReturnToSelection()
     {
-        eventSystem.SetSelectedGameObject(GameObject.Find("HackButton"));
+        eventSystem.SetSelectedGameObject(previousButton);
     }
 
     public void SetAction(GameObject action)
     {
+        previousButton = highlightedButton;
         selectedAction = action.GetComponent<Action>();
         if (selectedAction.isTargeted)
         {
@@ -129,6 +135,22 @@ public class BattleManager : MonoBehaviour
     {
         eventSystem.sendNavigationEvents = false;
         StartDialogue("You won! Received " + reward + " scrap!", defaultSpeed);
+    }
+
+    public void ToggleMenu()
+    {
+        if (actionMenu.gameObject.activeInHierarchy)
+        {
+            actionMenu.SetActive(false);
+            spellMenu.SetActive(true);
+            eventSystem.SetSelectedGameObject(GameObject.Find("MultiHackButton"));
+        }
+        else
+        {
+            actionMenu.SetActive(true);
+            spellMenu.SetActive(false);
+            eventSystem.SetSelectedGameObject(GameObject.Find("HackButton"));
+        }
     }
 
     [Serializable]
