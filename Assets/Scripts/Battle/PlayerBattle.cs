@@ -30,6 +30,10 @@ public class PlayerBattle : MonoBehaviour
     {
         hp -= damage;
         hpText.text = "HP: " + hp + "/" + maxHp;
+        if (hp > maxHp)
+        {
+            hp = maxHp;
+        }
         if (hp <= 0)
         {
             // BattleManage.Instance.GameOver();
