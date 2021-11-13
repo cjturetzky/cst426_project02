@@ -53,6 +53,19 @@ public class BattleManager : MonoBehaviour
         }
     }
 
+    // Deals damage to all active enemies. Used by the Multi-Hack action. 
+    public void DamageAll(int damage)
+    {
+        // Create a new list to account for enemies dying mid-enumeration
+        List<Enemy> enemies = new List<Enemy>();
+        foreach (GameObject enemy in round.enemies)
+        {
+            enemies.Add(enemy.GetComponent<Enemy>());
+        }
+        enemies.ForEach(enemy => enemy.TakeDamage(10));
+    }
+
+    // Called by enemies when their hp is reduced to 0. 
     public void RemoveEnemy(GameObject enemy)
     {
         reward += enemy.GetComponent<Enemy>().scrap;
@@ -63,11 +76,13 @@ public class BattleManager : MonoBehaviour
         }
     }
 
+    // Returns to the button that was selected at the end of the previous turn
     public void ReturnToSelection()
     {
         eventSystem.SetSelectedGameObject(previousButton);
     }
 
+    // Load an action and executes its script
     public void SetAction(GameObject action)
     {
         previousButton = highlightedButton;
@@ -76,18 +91,24 @@ public class BattleManager : MonoBehaviour
         {
             SetTarget();
         }
-        else
+        else if (!selectedAction.hasMinigame)
         {
             selectedAction.Execute(player);
             BeginEnemyTurn();
         }
+        else
+        {
+            selectedAction.Execute(player);
+        }
     }
 
+    // Prompts the player to select an enemy to hack
     public void SetTarget()
     {
         StartDialogue("Select a target!", defaultSpeed);
         eventSystem.SetSelectedGameObject(GameObject.FindGameObjectWithTag("Enemy"));
     }
+
 
     public void ActivatePuzzle()
     {
@@ -96,11 +117,12 @@ public class BattleManager : MonoBehaviour
         eventSystem.sendNavigationEvents = false;
     }
 
+    // Called by the puzzle manager on completion. Executes the selected action's script
     public void EndPuzzle()
     {
         PuzzleManager.Instance.Restart();
         puzzleView.SetActive(false);
-        eventSystem.currentSelectedGameObject.GetComponent<Enemy>().TakeDamage(10);
+        selectedAction.Success();
         BeginEnemyTurn();
     }
 
@@ -137,6 +159,7 @@ public class BattleManager : MonoBehaviour
         StartDialogue("You won! Received " + reward + " scrap!", defaultSpeed);
     }
 
+    // Swaps between the Main and Spell menus for actions
     public void ToggleMenu()
     {
         if (actionMenu.gameObject.activeInHierarchy)

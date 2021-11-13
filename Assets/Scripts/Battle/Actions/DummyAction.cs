@@ -9,4 +9,6 @@ public class DummyAction : Action
     {
         Debug.Log("smile");
     }
+    
+    public override void Success(){}
 }

@@ -6,5 +6,8 @@ using UnityEngine;
 public abstract class Action : MonoBehaviour
 {
     public bool isTargeted;
+    public bool hasMinigame;
     public abstract void Execute(GameObject target);
+
+    public abstract void Success();
 }

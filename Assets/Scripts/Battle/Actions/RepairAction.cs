@@ -8,4 +8,7 @@ public class RepairAction : Action
     {
         target.GetComponent<PlayerBattle>().TakeDamage(-30);
     }
+
+    public override void Success(){}
+
 }
