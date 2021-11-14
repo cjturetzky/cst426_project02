@@ -12,6 +12,7 @@ public class BattleManager : MonoBehaviour
     public GameObject[] slots;
 
     public GameObject player;
+    PlayerBattle playerCore;
     public GameObject puzzleView;
 
     public GameObject actionMenu;
@@ -33,6 +34,7 @@ public class BattleManager : MonoBehaviour
     {
         Instance = this;
         eventSystem = this.GetComponent<EventSystem>();
+        playerCore = player.GetComponent<PlayerBattle>();
         InstantiateEnemies();
     }
 
@@ -88,6 +90,16 @@ public class BattleManager : MonoBehaviour
     {
         previousButton = highlightedButton;
         selectedAction = action.GetComponent<Action>();
+        if (playerCore.mp - selectedAction.mpCost < 0)
+        {
+            StartDialogue("You don't have enough MP!", defaultSpeed / 2);
+            return;
+        }
+        else
+        {
+            playerCore.SpendMp(selectedAction.mpCost);
+        }
+
         if (selectedAction.isTargeted)
         {
             SetTarget();
@@ -143,7 +155,7 @@ public class BattleManager : MonoBehaviour
             damage += enemy.atk;
         }
         StartDialogue("The enemies attacked for " + damage + " damage!", defaultSpeed);
-        player.GetComponent<PlayerBattle>().TakeDamage(damage);
+        playerCore.TakeDamage(damage);
         BeginPlayerTurn();
     }
 

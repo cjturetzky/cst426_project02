@@ -44,10 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08368f1a1b44a2db181fe40152151c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpText: {fileID: 0}
+  mpText: {fileID: 0}
   maxHp: 100
   hp: 100
   atk: 10
   mp: 50
+  maxMp: 50
 --- !u!212 &3722138794222009434
 SpriteRenderer:
   m_ObjectHideFlags: 0

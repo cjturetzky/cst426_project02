@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca407186881d1c63bf68e7a7f95f6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mpCost: 20
   isTargeted: 0
   hasMinigame: 1

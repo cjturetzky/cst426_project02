@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45611a1447237e1c88b5244b8258df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoText: 'Multi-Hack: Deal damage to all enemies'
+  infoText: Damages all enemies // Costs 20 MP
 --- !u!1 &462583176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,7 +1011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45611a1447237e1c88b5244b8258df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoText: 'Hack: Deal damage to one enemy'
+  infoText: Deals damage to an enemy
 --- !u!1 &806992508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,7 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45611a1447237e1c88b5244b8258df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoText: 'Technique: View your list of spells'
+  infoText: View your spells
 --- !u!1 &960191876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,7 +1701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45611a1447237e1c88b5244b8258df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoText: ':): Do absolutely nothing. Don''t use this'
+  infoText: Do nothing (Don't do this)
 --- !u!1 &1177660163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,7 +1848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45611a1447237e1c88b5244b8258df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoText: 'Self-Repair: Heal for 50 HP'
+  infoText: Heal for 50 HP // Costs 10 MP
 --- !u!1 &1185405707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2546,10 @@ PrefabInstance:
       propertyPath: hpText
       value: 
       objectReference: {fileID: 866097539}
+    - target: {fileID: 8979358115469392590, guid: 00886716f2e3ee3fcbbcd5a44df574bf, type: 3}
+      propertyPath: mpText
+      value: 
+      objectReference: {fileID: 475130872}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00886716f2e3ee3fcbbcd5a44df574bf, type: 3}
 --- !u!1 &1705528473

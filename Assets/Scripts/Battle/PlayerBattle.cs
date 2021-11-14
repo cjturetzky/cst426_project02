@@ -8,10 +8,12 @@ using UnityEngine.UI;
 public class PlayerBattle : MonoBehaviour
 {
     public Text hpText;
+    public Text mpText;
     public int maxHp;
     public int hp;
     public int atk;
     public int mp; 
+    public int maxMp;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,12 @@ public class PlayerBattle : MonoBehaviour
             // BattleManage.Instance.GameOver();
             Debug.Log("Player has perished");
         }
+    }
+
+    public void SpendMp(int cost)
+    {
+        mp -= cost;
+        mpText.text = "MP: " + mp + "/" + maxMp;
     }
 
 }
