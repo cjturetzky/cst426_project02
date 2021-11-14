@@ -18,6 +18,7 @@ public class BattleManager : MonoBehaviour
     public GameObject spellMenu;
 
     public Text infoText;
+    public Text spellText;
     private EventSystem eventSystem;
     public Action selectedAction;
     public GameObject highlightedButton;
@@ -180,6 +181,11 @@ public class BattleManager : MonoBehaviour
     public struct Round
     {
         public List<GameObject> enemies;
+    }
+
+    public void DisplaySpellInfo(string text)
+    {
+        spellText.text = text;
     }
 
     void StartDialogue(string text, float speed)

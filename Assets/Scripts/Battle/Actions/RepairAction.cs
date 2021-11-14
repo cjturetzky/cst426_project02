@@ -6,7 +6,7 @@ public class RepairAction : Action
 {
     public override void Execute(GameObject target)
     {
-        target.GetComponent<PlayerBattle>().TakeDamage(-30);
+        target.GetComponent<PlayerBattle>().TakeDamage(-50);
     }
 
     public override void Success(){}
