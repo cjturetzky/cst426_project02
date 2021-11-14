@@ -38,8 +38,7 @@ public class PlayerBattle : MonoBehaviour
         }
         if (hp <= 0)
         {
-            // BattleManage.Instance.GameOver();
-            Debug.Log("Player has perished");
+            BattleManager.Instance.GameOver();
         }
     }
 

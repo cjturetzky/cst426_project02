@@ -156,7 +156,11 @@ public class BattleManager : MonoBehaviour
         }
         StartDialogue("The enemies attacked for " + damage + " damage!", defaultSpeed);
         playerCore.TakeDamage(damage);
-        BeginPlayerTurn();
+
+        if (playerCore.hp > 0)
+        {
+            BeginPlayerTurn();
+        }
     }
 
 
@@ -170,6 +174,12 @@ public class BattleManager : MonoBehaviour
     {
         eventSystem.sendNavigationEvents = false;
         StartDialogue("You won! Received " + reward + " scrap!", defaultSpeed);
+    }
+
+    public void GameOver()
+    {
+        StartDialogue("You were knocked out! Game Over!", defaultSpeed);
+        eventSystem.sendNavigationEvents = false;
     }
 
     // Swaps between the Main and Spell menus for actions
