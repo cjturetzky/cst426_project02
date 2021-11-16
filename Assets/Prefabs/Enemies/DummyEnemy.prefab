@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
-  atk: 1
+  atk: 10
   scrap: 10
 --- !u!222 &538463478765443539
 CanvasRenderer:
