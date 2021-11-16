@@ -21,9 +21,9 @@ public class Enemy : MonoBehaviour, ISelectHandler, IDeselectHandler, ISubmitHan
 
     public void OnSubmit(BaseEventData eventData)
     {
-        // to be replaced with: BattleManage.Instance.selectedAction.execute();
-        Debug.Log("Used " + BattleManager.Instance.selectedAction + " on " + this.gameObject.name);
-        BattleManager.Instance.ActivatePuzzle();
+        BattleManager.Instance.selectedAction.Execute(this.gameObject);
+        // Debug.Log("Used " + BattleManager.Instance.selectedAction + " on " + this.gameObject.name);
+        // BattleManager.Instance.ActivatePuzzle();
         // TakeDamage(10);
         // BattleManager.Instance.ReturnToSelection();
     }
@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour, ISelectHandler, IDeselectHandler, ISubmitHan
     void Die()
     {
         // Reward player with scrap
+        BattleManager.Instance.RemoveEnemy(this.gameObject);
         Destroy(this.gameObject);
     }
 }

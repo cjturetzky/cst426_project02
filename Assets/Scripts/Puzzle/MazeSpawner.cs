@@ -22,7 +22,22 @@ public class MazeSpawner : MonoBehaviour
   public GameObject PlayerPrefab = null;
   // Start is called before the first frame update
   void Start()
+  {
+    GenerateNewMaze();  
+  }
+
+  public void ClearMaze()
+  {
+    List<GameObject> children = new List<GameObject>();
+    foreach (Transform child in transform)
     {
+      children.Add(child.gameObject);
+    }
+    children.ForEach(child => Destroy(child));
+  }
+
+  public void GenerateNewMaze()
+  {
     if (!FullRandom)
     {
       Random.InitState(RandomSeed);
@@ -83,7 +98,9 @@ public class MazeSpawner : MonoBehaviour
       }
     }
     
+    
     GameObject player = Instantiate(PlayerPrefab, new Vector3((Columns-1), (Rows-1), 0), PlayerPrefab.transform.rotation) as GameObject;
     player.transform.parent = transform;
+    this.transform.Translate(new Vector3(-2.5f, -2.5f, 0));
   }
 }

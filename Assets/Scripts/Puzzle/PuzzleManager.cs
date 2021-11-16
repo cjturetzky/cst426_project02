@@ -6,8 +6,9 @@ using UnityEngine;
 // Feel free to do whatever with this as the maze gets reworked, I just wanted to have a functional loop for the playtest
 public class PuzzleManager : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject spawnPoint;
+    // public GameObject player;
+    // public GameObject spawnPoint;
+    public MazeSpawner mazeSpawner;
 
     public static PuzzleManager Instance {private set ; get;}
     void Awake()
@@ -17,6 +18,8 @@ public class PuzzleManager : MonoBehaviour
 
     public void Restart()
     {
-        player.transform.position = spawnPoint.transform.position;
+        //player.transform.position = spawnPoint.transform.position;
+        mazeSpawner.ClearMaze();
+        mazeSpawner.GenerateNewMaze();
     }
 }
