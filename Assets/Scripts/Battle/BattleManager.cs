@@ -44,6 +44,13 @@ public class BattleManager : MonoBehaviour
 
     void Update()
     {
+        if (puzzleView.activeSelf){
+            timeRemaining -= Time.deltaTime;
+            if(timeRemaining <= 0){
+                EndPuzzle(true);
+            }
+        }
+
         if (eventSystem.currentSelectedGameObject == null)
         {
             eventSystem.SetSelectedGameObject(highlightedButton);
@@ -51,13 +58,7 @@ public class BattleManager : MonoBehaviour
 
         highlightedButton = eventSystem.currentSelectedGameObject;
 
-        if (puzzleView.activeSelf){
-            timeRemaining -= Time.deltaTime;
-            if(timeRemaining <= 0){
-                EndPuzzle(true);
-                timeRemaining = time;
-            }
-        }
+        
     }
 
     void InstantiateEnemies()
@@ -137,10 +138,10 @@ public class BattleManager : MonoBehaviour
 
     public void ActivatePuzzle()
     {
-        StartDialogue("Navigate through the maze to hack the robot's CORE!", defaultSpeed / 2);
+        timeRemaining = time;
+        StartDialogue("Navigate through the maze to hack the robot's CORE! You have " + time + " seconds!", defaultSpeed / 2);
         puzzleView.SetActive(true);
         eventSystem.sendNavigationEvents = false;
-
     }
 
     // Called by the puzzle manager on completion. Executes the selected action's script
