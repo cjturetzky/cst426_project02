@@ -24,14 +24,18 @@ public class BattleManager : MonoBehaviour
     public Action selectedAction;
     public GameObject highlightedButton;
 
+    public float time = 15.0f;
+    
     GameObject previousButton;
 
     int reward = 0;
     float defaultSpeed = 0.025f;
+    float timeRemaining = 0.0f;
 
     public static BattleManager Instance {private set ; get;}
     void Start()
     {
+        timeRemaining = time;
         Instance = this;
         eventSystem = this.GetComponent<EventSystem>();
         playerCore = player.GetComponent<PlayerBattle>();
@@ -46,6 +50,14 @@ public class BattleManager : MonoBehaviour
         }
 
         highlightedButton = eventSystem.currentSelectedGameObject;
+
+        if (puzzleView.activeSelf){
+            timeRemaining -= Time.deltaTime;
+            if(timeRemaining <= 0){
+                EndPuzzle(true);
+                timeRemaining = time;
+            }
+        }
     }
 
     void InstantiateEnemies()
@@ -128,14 +140,17 @@ public class BattleManager : MonoBehaviour
         StartDialogue("Navigate through the maze to hack the robot's CORE!", defaultSpeed / 2);
         puzzleView.SetActive(true);
         eventSystem.sendNavigationEvents = false;
+
     }
 
     // Called by the puzzle manager on completion. Executes the selected action's script
-    public void EndPuzzle()
+    public void EndPuzzle(bool timeout)
     {
         PuzzleManager.Instance.Restart();
         puzzleView.SetActive(false);
-        selectedAction.Success();
+        if(!timeout){
+            selectedAction.Success();
+        }
         BeginEnemyTurn();
     }
 

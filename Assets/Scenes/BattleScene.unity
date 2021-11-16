@@ -281,7 +281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -393.87268, y: -271.03}
+  m_AnchoredPosition: {x: -375, y: -409}
   m_SizeDelta: {x: 200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &252325841
@@ -741,7 +741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -593.87, y: -271.03}
+  m_AnchoredPosition: {x: -574.9973, y: -409}
   m_SizeDelta: {x: 200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &520028435
@@ -1047,7 +1047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 91.846, y: -304}
+  m_AnchoredPosition: {x: 110.71868, y: -441.97}
   m_SizeDelta: {x: 759.7021, y: 85.0605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &806992510
@@ -1520,6 +1520,7 @@ MonoBehaviour:
   spellText: {fileID: 1252709564}
   selectedAction: {fileID: 0}
   highlightedButton: {fileID: 0}
+  time: 10
 --- !u!1 &1029899143
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,6 +2753,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -409.7, y: -166.03}
+  m_AnchoredPosition: {x: -390.82733, y: -304}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
