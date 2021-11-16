@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
 
 
-    float speed  = 10f; 
+    float speed  = 300.0f; 
 
 
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     {
         Vector3 move  = new Vector3(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"),0);
 
-        transform.position +=move*speed *Time.deltaTime;
+        transform.position += move*speed * Time.deltaTime;
         
     }
 }
