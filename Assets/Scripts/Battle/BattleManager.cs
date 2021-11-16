@@ -20,6 +20,8 @@ public class BattleManager : MonoBehaviour
 
     public Text infoText;
     public Text spellText;
+    public Text timeText;
+
     private EventSystem eventSystem;
     public Action selectedAction;
     public GameObject highlightedButton;
@@ -46,6 +48,7 @@ public class BattleManager : MonoBehaviour
     {
         if (puzzleView.activeSelf){
             timeRemaining -= Time.deltaTime;
+            timeText.text = "Time: " + timeRemaining.ToString("00.00");
             if(timeRemaining <= 0){
                 EndPuzzle(true);
             }
