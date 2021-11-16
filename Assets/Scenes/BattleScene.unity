@@ -1521,7 +1521,7 @@ MonoBehaviour:
   timeText: {fileID: 1321087966}
   selectedAction: {fileID: 0}
   highlightedButton: {fileID: 0}
-  time: 15
+  time: 20
 --- !u!1 &1029899143
 GameObject:
   m_ObjectHideFlags: 0
