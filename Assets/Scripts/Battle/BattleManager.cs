@@ -139,7 +139,7 @@ public class BattleManager : MonoBehaviour
     }
 
 
-    public void ActivatePuzzle()
+    public void ActivatePuzzle(float time)
     {
         timeRemaining = time;
         StartDialogue("Navigate through the maze to hack the robot's CORE! You have " + time + " seconds!", defaultSpeed / 2);
