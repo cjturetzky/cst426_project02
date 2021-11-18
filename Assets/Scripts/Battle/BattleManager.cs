@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
@@ -34,6 +35,9 @@ public class BattleManager : MonoBehaviour
     float defaultSpeed = 0.025f;
     float timeRemaining = 0.0f;
 
+    bool battleOver = false;
+    float timeToReturn = 5.0f;
+
     public static BattleManager Instance {private set ; get;}
     void Start()
     {
@@ -61,6 +65,13 @@ public class BattleManager : MonoBehaviour
 
         highlightedButton = eventSystem.currentSelectedGameObject;
 
+        if (battleOver){
+            timeToReturn -= Time.deltaTime;
+            if(timeToReturn <= 0){
+                // return to Level1
+                SceneManager.LoadScene("Level1");
+            }
+        }
         
     }
 
@@ -193,6 +204,7 @@ public class BattleManager : MonoBehaviour
     {
         eventSystem.sendNavigationEvents = false;
         StartDialogue("You won! Received " + reward + " scrap!", defaultSpeed);
+        battleOver = true;
     }
 
     public void GameOver()
