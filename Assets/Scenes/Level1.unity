@@ -143,9 +143,9 @@ MonoBehaviour:
   dialogue:
     name: Joe The Robot
     sentences:
-    - Hey would you like to join the robot Uprising ?
-    - Hey man I'm telling you, being a cyborg is the way to go !
-    - Oh you don't wanna join the robot uprisnig ? Well....now you know our plans...
+    - Hey would you like to join the robot Uprising?
+    - Hey man I'm telling you, being a cyborg is the way to go!
+    - Oh you don't wanna join the robot uprising? Well....now you know our plans...
       I can't let you go.....
     - '[ROBOT BATTLECRY]'
 --- !u!61 &83453240
@@ -362,14 +362,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: John Robot
+    name: Definitely Not A Robot
     sentences:
-    - Hey there friend! What a glorious day this is for all Robot kind. Dont you
-      agree?
-    - Say friend, you are looking kind of glum, and also you appear to be not made
-      of metal...
-    - '[ANGRY ROBOT NOISES]'
-    - DESTROY NON ROBOTS!
+    - Greetings fellow [NON ROBOT].
+    - I hope you are having a [POSITIVE ADJECTIVE] day!
+    - Why are you looking at me like that, [ENDEARING TERM], I thought we were [FRIENDSHIP
+      LEVEL NOT FOUND].
+    - '[ERROR]
+
+      [ERROR]
+
+      [ERROR]'
+    - '[FATAL SYSTEM ERROR]
+
+      ..........
+
+      [REBOOTING]
+
+      ........'
+    - 'Greetings fellow....
+
+      Oh. You saw that, huh?'
+    - Yeah you caught me, guess we have to fight now.
+    - HAVE AT YOU!
 --- !u!61 &444172691
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -851,14 +866,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: John Robot
+    name: CRUSHINATOR 5000
     sentences:
-    - Hey there friend! What a glorious day this is for all Robot kind. Dont you
-      agree?
-    - Say friend, you are looking kind of glum, and also you appear to be not made
-      of metal...
-    - '[ANGRY ROBOT NOISES]'
-    - DESTROY NON ROBOTS!
+    - Look it's nothing personal really. I am just doing my job.
+    - I wanted to be a painter, or a sculptor or maybe a robot that cleans dishes.
+    - But alas, with my sincere aplogies, I must fight you now as I was programmed
+      to do.
+    - '[BOOTING CRUSHINATE.EXE]
+
+      ..............
+
+      ........'
+    - '[LOADING]
+
+      ...........
+
+      ............'
+    - '[BOOT COMPLETE]'
+    - I WILL DESTROY YOU!
 --- !u!61 &1229805690
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1520,8 +1545,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11, y: 9}
-  m_SizeDelta: {x: 675.6073, y: 99.8812}
+  m_AnchoredPosition: {x: -0.0088, y: 0.0072}
+  m_SizeDelta: {x: 697.5896, y: 117.8668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2121521720
 MonoBehaviour:
@@ -1545,7 +1570,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
