@@ -36,6 +36,8 @@ public class BattleManager : MonoBehaviour
     float timeRemaining = 0.0f;
 
     bool battleOver = false;
+    bool win = false;
+    bool lose = false;
     float timeToReturn = 5.0f;
 
     public static BattleManager Instance {private set ; get;}
@@ -69,7 +71,13 @@ public class BattleManager : MonoBehaviour
             timeToReturn -= Time.deltaTime;
             if(timeToReturn <= 0){
                 // return to Level1
-                SceneManager.LoadScene("Level1");
+                if(win){
+                    SceneManager.LoadScene("Level1");
+                }
+                if(lose){
+                    SceneManager.LoadScene("SceneStart");
+                }
+                
             }
         }
         
@@ -205,12 +213,15 @@ public class BattleManager : MonoBehaviour
         eventSystem.sendNavigationEvents = false;
         StartDialogue("You won! Received " + reward + " scrap!", defaultSpeed);
         battleOver = true;
+        win = true;
     }
 
     public void GameOver()
     {
         StartDialogue("You were knocked out! Game Over!", defaultSpeed);
         eventSystem.sendNavigationEvents = false;
+        battleOver = true;
+        lose = true;
     }
 
     // Swaps between the Main and Spell menus for actions
