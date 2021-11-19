@@ -17,4 +17,13 @@ ESC: CANCEL
   - MP: You have a limited amount of MP with which to use spells.
   - Time: The maze has a time limit. If you run out, the hack fails. 
 
+# Contributors:
+Jason Baker: Overworld Dialogue
+
+Phillip Giourousis: Overworld 
+
+Niko Holbrook: Battle System
+
+CJ Turetzky: Maze Minigame
+
 
