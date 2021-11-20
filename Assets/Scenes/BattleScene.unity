@@ -1703,7 +1703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45611a1447237e1c88b5244b8258df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoText: Do nothing (Don't do this)
+  infoText: Do nothing (This is a bad idea)
 --- !u!1 &1177660163
 GameObject:
   m_ObjectHideFlags: 0

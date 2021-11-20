@@ -46,3 +46,4 @@ MonoBehaviour:
   mpCost: 20
   isTargeted: 0
   hasMinigame: 1
+  time: 13

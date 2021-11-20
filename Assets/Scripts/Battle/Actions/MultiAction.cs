@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class MultiAction : Action
 {
+    public float time;
     public override void Execute(GameObject target)
     {
         // stretchgoal: generate larger maze
-        BattleManager.Instance.ActivatePuzzle();
+        BattleManager.Instance.ActivatePuzzle(time);
     }
 
     public override void Success()
